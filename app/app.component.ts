@@ -1,5 +1,5 @@
 import{ Component } from '@angular/core';
-
+import{ AppService } from './app.service';
 @Component({
    selector: 'my-app',
    template: `<div class="div"><h1>{{title}}</h1>
@@ -19,6 +19,10 @@ import{ Component } from '@angular/core';
 export class AppComponent{
     title = "Welcome Angular2!!!";
     languages = xxx;
+
+    constructor(appService:AppService){
+        
+    }
 }
 
 export class Lang {
