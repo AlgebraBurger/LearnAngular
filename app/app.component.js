@@ -13,13 +13,14 @@ var app_service_1 = require('./app.service');
 var AppComponent = (function () {
     function AppComponent(appService) {
         this.title = "Welcome Angular2!!!";
-        this.languages = xxx;
+        this.languages = appService.getLanguages();
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             template: "<div class=\"div\"><h1>{{title}}</h1>\n   <ul>\n    <li *ngFor=\"let langx of languages\">\n      {{langx.name}} | {{langx.level}} \n    </li>\n   </ul>\n   </div>",
-            styles: ["\n    h1{\n      background-color:black; \n      padding:10px;\n    }\n   "]
+            styles: ["\n    h1{\n      background-color:black; \n      padding:10px;\n    }\n   "],
+            providers: [app_service_1.AppService]
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService])
     ], AppComponent);

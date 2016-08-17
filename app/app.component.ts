@@ -14,14 +14,14 @@ import{ AppService } from './app.service';
       background-color:black; 
       padding:10px;
     }
-   `]
+   `],
+   providers: [AppService]
 })
 export class AppComponent{
     title = "Welcome Angular2!!!";
-    languages = xxx;
-
+    languages;
     constructor(appService:AppService){
-        
+        this.languages = appService.getLanguages();
     }
 }
 
