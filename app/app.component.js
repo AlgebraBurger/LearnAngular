@@ -10,17 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var app_service_1 = require('./app.service');
+var auto_grow_directive_1 = require('./auto-grow.directive');
 var AppComponent = (function () {
     function AppComponent(appService) {
-        this.title = "Welcome Angular2!!!";
+        this.title = "Welcome Angular2!!!x";
         this.languages = appService.getLanguages();
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<div class=\"div\"><h1>{{title}}</h1>\n   <ul>\n    <li *ngFor=\"let langx of languages\">\n      {{langx.name}} | {{langx.level}} \n    </li>\n   </ul>\n   </div>",
+            template: "<div class=\"div\"><h1>{{title}}</h1>\n   <input type=\"text\" autoGrow />\n   <ul>\n    <li *ngFor=\"let langx of languages\">\n      {{langx.name}} | {{langx.level}} \n    </li>\n   </ul>\n   </div><employees>Loading...</employees>",
             styles: ["\n    h1{\n      background-color:black; \n      padding:10px;\n    }\n   "],
-            providers: [app_service_1.AppService]
+            providers: [app_service_1.AppService],
+            directives: [auto_grow_directive_1.AutoGrowDirective]
         }), 
         __metadata('design:paramtypes', [app_service_1.AppService])
     ], AppComponent);

@@ -1,24 +1,27 @@
 import{ Component } from '@angular/core';
 import{ AppService } from './app.service';
+import{ AutoGrowDirective} from './auto-grow.directive';
 @Component({
    selector: 'my-app',
    template: `<div class="div"><h1>{{title}}</h1>
+   <input type="text" autoGrow />
    <ul>
     <li *ngFor="let langx of languages">
       {{langx.name}} | {{langx.level}} 
     </li>
    </ul>
-   </div>`,
+   </div><employees>Loading...</employees>`,
    styles: [`
     h1{
       background-color:black; 
       padding:10px;
     }
    `],
-   providers: [AppService]
+   providers: [AppService],
+   directives: [AutoGrowDirective]
 })
 export class AppComponent{
-    title = "Welcome Angular2!!!";
+    title = "Welcome Angular2!!!x";
     languages;
     constructor(appService:AppService){
         this.languages = appService.getLanguages();
