@@ -11,16 +11,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "Welcome Angular2!!!";
+        this.languages = xxx;
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "Welcome Angular2",
-            styles: [""]
+            template: "<div class=\"div\"><h1>{{title}}</h1>\n   <ul>\n    <li *ngFor=\"let langx of languages\">\n      {{langx.name}} | {{langx.level}} \n    </li>\n   </ul>\n   </div>",
+            styles: ["\n    h1{\n      background-color:black; \n      padding:10px;\n    }\n   "]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+var Lang = (function () {
+    function Lang() {
+    }
+    return Lang;
+}());
+exports.Lang = Lang;
+var xxx = [
+    { id: 1, name: 'C#', level: 10 },
+    { id: 1, name: 'Php', level: 7 },
+    { id: 1, name: 'Java', level: 3 },
+    { id: 1, name: 'Javascript', level: 10 }
+];
 //# sourceMappingURL=app.component.js.map
